@@ -1,0 +1,15 @@
+import pandas as pd
+import numpy as np
+from scipy import stats
+import matplotlib.pyplot as plot 
+ds = pd.read_csv('University of Regina.csv')
+ds.head(5)
+ds.info()
+ds_CurrentSalary = ds.groupby('Current Salary')
+plot.figure(figsize = (20,5))
+plot.plot(ds_CurrentSalary['Current Salary'])
+plot.title('Salva Regina Employee Salaries')
+plot.xlabel('Current Salary')
+plot.xticks(rotation=45)
+plot.ylabel('Total with Stipend')
+plot.show()
